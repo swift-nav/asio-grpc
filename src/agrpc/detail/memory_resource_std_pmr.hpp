@@ -16,6 +16,7 @@
 #define AGRPC_DETAIL_MEMORY_RESOURCE_HPP
 
 #include <agrpc/detail/config.hpp>
+
 #include <memory_resource>
 
 AGRPC_NAMESPACE_BEGIN()
