@@ -16,22 +16,13 @@
 #define AGRPC_DETAIL_MEMORY_RESOURCE_HPP
 
 #include <agrpc/detail/config.hpp>
-
-#ifndef SWIFTNAV_EXPERIMENTAL_MEMORY_RESOURCE
 #include <memory_resource>
-#else
-#include <experimental/memory_resource>
-#endif
 
 AGRPC_NAMESPACE_BEGIN()
 
 namespace detail
 {
-#ifndef SWIFTNAV_EXPERIMENTAL_MEMORY_RESOURCE
 namespace pmr = std::pmr;
-#else
-namespace pmr = std::experimental::pmr;
-#endif
 namespace container = std;
 }
 
