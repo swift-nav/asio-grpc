@@ -12,12 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifdef AGRPC_USE_RECYCLING_ALLOCATOR
-#include <agrpc/detail/memory_resource_recycling_allocator.hpp>
-#elif defined(AGRPC_USE_BOOST_CONTAINER)
-#include <agrpc/detail/memory_resource_boost_pmr.hpp>
-#elif defined(SWIFTNAV_EXPERIMENTAL_MEMORY_RESOURCE)
-#include <agrpc/detail/memory_resource_std_pmr_experimental.hpp>
-#else
-#include <agrpc/detail/memory_resource_std_pmr.hpp>
-#endif
+#ifndef AGRPC_DETAIL_MEMORY_RESOURCE_EXPERIMENTAL_HPP
+#define AGRPC_DETAIL_MEMORY_RESOURCE_EXPERIMENTAL_HPP
+
+#include <agrpc/detail/config.hpp>
+#include <experimental/memory_resource>
+
+AGRPC_NAMESPACE_BEGIN()
+
+namespace detail
+{
+namespace pmr = std::experimental::pmr;
+namespace container = std;
+}
+
+AGRPC_NAMESPACE_END
+
+#endif  // AGRPC_DETAIL_MEMORY_RESOURCE_EXPERIMENTAL_HPP
